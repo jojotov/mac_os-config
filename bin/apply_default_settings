@@ -216,6 +216,10 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 printf "App Store - Enable Debug Menu in the Mac App Store\n"
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
+printf "Network - Use Cloudflare's secure/fast DNS"
+networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1
+networksetup -setdnsservers "Thunderbolt Ethernet" 1.1.1.1 1.0.0.1
+
 printf "CCMenu - Add open source projects\n"
 defaults write net.sourceforge.cruisecontrol.CCMenu Projects '
 (
